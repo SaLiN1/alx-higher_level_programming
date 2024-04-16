@@ -1,21 +1,20 @@
 #!/usr/bin/python3
-"""Module for the Square class"""
+'''Module for Rectangle class.'''
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Class that inherits from Rectangle"""
+    '''A subclass representing a rectangle.'''
     def __init__(self, size):
-        """Instantiation function for Square class"""
-        super().__init__(size, size)
+        '''Constructor.'''
         self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
 
     def area(self):
-        """Method that returns the area of the square"""
+        '''Method for area of square.'''
         return self.__size ** 2
 
     def __str__(self):
-        """Method that returns  the square description
-            [Squre] <width>/<height>"""
+        '''Returns string representation of this square.'''
         return "[Square] " + str(self.__size) + "/" + str(self.__size)
